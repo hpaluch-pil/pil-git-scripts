@@ -1,0 +1,7 @@
+# created debian package
+*.deb
+
+# vim backup files
+*.swp
+*~
+
