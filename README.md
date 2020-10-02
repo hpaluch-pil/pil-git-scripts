@@ -34,7 +34,7 @@ On succcess there should be generated `.deb` package *in this directory*
 To see contents of created `.deb` package use `dpkg -c`, for example:
 
 ```bash
-dpkg -c pil-git-scripts_0.9_all.deb
+dpkg -c pil-git-scripts_0.10_all.deb
 ```
 
 ## System installation
@@ -49,10 +49,10 @@ To install directly this package without repository you need to:
 # satisfy installation dependecy - required only with direct use of dpkg
 sudo apt-get install git
 # now install generated package
-sudo dpkg -i pil-git-scripts_0.9_all.deb
+sudo dpkg -i pil-git-scripts_0.10_all.deb
 # you can verify insallation using commands:
-dpkg -l pil-git-scripts_0.9_all.deb
-dpkg -L pil-git-scripts_0.9_all.deb
+dpkg -l pil-git-scripts_0.10_all.deb
+dpkg -L pil-git-scripts_0.10_all.deb
 ```
 
 
