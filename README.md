@@ -17,7 +17,7 @@ NOTE: All above commands are supposed to be invoked within git repository
 Tested on Debian10:
 
 ```bash
-sudo apt-get install equivs
+sudo apt-get install equivs libparse-debianchangelog-perl
 ```
 
 ## Building .deb package

@@ -1,0 +1,12 @@
+pil-git-scripts (0.10) unstable; urgency=low
+
+  * Added LICENSE, README.Debian, ChangeLog
+
+ -- Henryk Paluch <henryk.paluch@pickering.cz>  Fri, 02 Oct 2020 07:55:21 +0200
+
+pil-git-scripts (0.9) unstable; urgency=low
+
+  * First version
+
+ -- Henryk Paluch <henryk.paluch@pickering.cz>  Thu, 01 Oct 2020 12:56:20 +0000
+
