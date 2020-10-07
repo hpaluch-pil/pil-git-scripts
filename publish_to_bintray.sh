@@ -25,8 +25,13 @@ BINTRAY_LOGIN=$(fgrep 'machine api.bintray.com' $BINTRAY_CURL_FILE | awk '{print
 
 for i in *.deb
 do
+	set -x
 curl -T $i -fsS --netrc-file $BINTRAY_CURL_FILE \
 	https://api.bintray.com/content/$BINTRAY_LOGIN/$BINTRAY_REPO\
 /$BINTRAY_PKG/0/$i\;deb_distribution=$BINTRAY_DIST\;\
 deb_component=main\;deb_architecture=all
+	set +x
+	echo "Done. Remember to login to bintray, publish new version and un-publish old version of package"
 done
+exit 0
+
