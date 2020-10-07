@@ -15,17 +15,30 @@ NOTE: All above commands are supposed to be invoked within git repository
 
 # How to use this .deb package
 
-On your Debian10 just create file `/etc/apt/sources.list.d/pil_packages.list` with contents:
+Tested on Debian10.
+
+
+First import Public Bintray key:
+
+```bash
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80  --recv-keys 379CE192D401AB61
+```
+
+Then create repository
+file `/etc/apt/sources.list.d/pil_packages.list` with contents:
 
 ```
-# TODO: sign repository
-deb [trusted=yes] https://dl.bintray.com/hpaluch8192/pil-packages buster main
+deb https://dl.bintray.com/hpaluch8192/pil-packages buster main
 ```
 
 And then issue:
 
 ```bash
 sudo apt-get update
+```
+NOTE: Ensure that there are no errors and/or warning(s) on GPG keys.
+
+```bash
 sudo apt-get install pil-git-scripts
 ```
 And look into `/usr/local/bin/` for installed scripts.
@@ -54,12 +67,13 @@ On success there should be generated `.deb` package *in this directory*
 To see contents of created `.deb` package use `dpkg -c`, for example:
 
 ```bash
-dpkg -c pil-git-scripts_0.10_all.deb
+dpkg -c pil-git-scripts_0.11_all.deb
 ```
 
 ## System installation
 
-NOTE: This is temporary section - before creation of repository
+NOTE: It is preferred to use repository - see top of this README
+for instructions.
 
 To install directly this package without repository you need to:
 
@@ -69,9 +83,16 @@ To install directly this package without repository you need to:
 # satisfy installation dependecy - required only with direct use of dpkg
 sudo apt-get install git
 # now install generated package
-sudo dpkg -i pil-git-scripts_0.10_all.deb
+sudo dpkg -i pil-git-scripts_0.11_all.deb
 # you can verify insallation using commands:
-dpkg -l pil-git-scripts_0.10_all.deb
-dpkg -L pil-git-scripts_0.10_all.deb
+dpkg -l pil-git-scripts_0.11_all.deb
+dpkg -L pil-git-scripts_0.11_all.deb
 ```
+
+## Release tips
+
+Package version is gathered from ChangeLog file so one must add
+new entry there before making new release.
+
+TIP: Use `date -R` to get ChangeLog compliant date format.
 

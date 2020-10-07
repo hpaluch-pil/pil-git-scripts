@@ -1,3 +1,9 @@
+pil-git-scripts (0.11) unstable; urgency=low
+
+  * Bumped-up version to avoid conflict on bintray repository
+
+ -- Henryk Paluch <henryk.paluch@pickering.cz>  Wed, 07 Oct 2020 10:50:09 +0200
+
 pil-git-scripts (0.10) unstable; urgency=low
 
   * Added LICENSE, README.Debian, ChangeLog
