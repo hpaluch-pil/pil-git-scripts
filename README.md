@@ -96,3 +96,23 @@ new entry there before making new release.
 
 TIP: Use `date -R` to get ChangeLog compliant date format.
 
+
+# How to build RPM packages
+
+
+Work in Progress.
+
+## Building under openSUSE LEAP 15.2
+
+To setup environment do this:
+
+```bash
+sudo zypper in git-core rpm-build
+mkdir ~/projects
+cd ~/projects
+git clone https://github.com/hpaluch-pil/pil-git-scripts.git
+cd pil-git-scripts
+```
+
+
+

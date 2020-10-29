@@ -5,3 +5,7 @@
 *.swp
 *~
 
+# build for RPM
+build/
+
+
