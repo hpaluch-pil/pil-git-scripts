@@ -114,5 +114,9 @@ git clone https://github.com/hpaluch-pil/pil-git-scripts.git
 cd pil-git-scripts
 ```
 
+Now build RPM using script:
+```bash
+./build_rpm_suse.sh
+```
 
 

@@ -10,9 +10,6 @@
 # case the license is the MIT License). An "Open Source License" is a
 # license that conforms to the Open Source Definition (Version 1.9)
 # published by the Open Source Initiative.
-
-# Please submit bugfixes or comments via http://bugs.opensuse.org/
-#
 Name:           pil-git-scripts
 Version:        0.10
 Release:        0
@@ -25,6 +22,7 @@ Source0:        scripts/git_remote_status.sh
 Source1:        scripts/graph_log.sh
 Source2:        scripts/push_branch.sh
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+BuildArch:      noarch
 
 %description
 Simple collection of basic scripts to handle common 
@@ -37,13 +35,15 @@ git tasks.
 
 %install
 # from https://fedoraproject.org/wiki/Packaging:RPM_Source_Dir
-install -m 755 %{SOURCE0} $RPM_BUILD_ROOT/usr/local/bin
-install -m 755 %{SOURCE1} $RPM_BUILD_ROOT/usr/local/bin
-install -m 755 %{SOURCE2} $RPM_BUILD_ROOT/usr/local/bin
+install -m 755 -D %{SOURCE0} $RPM_BUILD_ROOT/usr/local/bin
+install -m 755 -D %{SOURCE1} $RPM_BUILD_ROOT/usr/local/bin
+install -m 755 -D %{SOURCE2} $RPM_BUILD_ROOT/usr/local/bin
 
 %files
 %defattr(-,root,root)
-%doc ChangeLog README LICENSE
+/usr/local/bin
+
+#TODO: %doc ChangeLog README LICENSE
 
 
 %changelog
