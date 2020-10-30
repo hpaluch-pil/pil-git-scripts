@@ -147,6 +147,7 @@ Where `$ID` is defined under `/etc/os-release`, for example:
 Install this RPM using standard command like:
 
 ```bash
+source /etc/os-release # get $ID
 sudo rpm -ivh \
 	build/rpm-$ID/rpmbuild/RPMS/noarch/pil-git-scripts-0.10-0.noarch.rpm
 ```
