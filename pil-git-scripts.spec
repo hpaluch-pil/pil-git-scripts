@@ -32,7 +32,8 @@ git tasks.
 %build
 
 %install
-# from https://fedoraproject.org/wiki/Packaging:RPM_Source_Dir
+# under CentOS the `install -D` does not create directories (why?)
+mkdir -p $RPM_BUILD_ROOT/usr/local/bin
 install -m 755 -D -t $RPM_BUILD_ROOT/usr/local/bin scripts/*.sh
 
 %files
