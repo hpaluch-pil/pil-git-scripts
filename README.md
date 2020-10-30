@@ -44,6 +44,16 @@ sudo apt-get install pil-git-scripts
 ```
 And look into `/usr/local/bin/` for installed scripts.
 
+# How to use .RPM package
+
+If you just want to install this packages from JFrog Bintray repository,
+then do this - for CentOS 7:
+
+```bash
+sudo curl -o /etc/yum.repos.d/bintray-hpaluch8192-pil-packages-rpms.repo https://bintray.com/hpaluch8192/pil-packages-rpms/rpm
+sudo yum update
+sudo yum install pil-git-scripts
+```
 
 # How to build .deb package
 
