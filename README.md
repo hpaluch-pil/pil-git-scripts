@@ -99,14 +99,12 @@ TIP: Use `date -R` to get ChangeLog compliant date format.
 
 # How to build RPM packages
 
-
-Work in Progress.
-
 ## Building under openSUSE LEAP 15.2
 
-To setup environment do this:
+To setup build environment do this:
 
 ```bash
+# tested on openSUSE LEAP 15.2 x86_64
 sudo zypper in git-core rpm-build
 mkdir ~/projects
 cd ~/projects
@@ -119,4 +117,16 @@ Now build RPM using script:
 ./build_rpm_suse.sh
 ```
 
+It should create RPM file as:
+
+```
+build/rpm-suse/rpmbuild/RPMS/noarch/pil-git-scripts-0.10-0.noarch.rpm
+```
+
+Install this RPM using standard command like:
+
+```bash
+sudo rpm -ivh \
+	build/rpm-suse/rpmbuild/RPMS/noarch/pil-git-scripts-0.10-0.noarch.rpm
+```
 

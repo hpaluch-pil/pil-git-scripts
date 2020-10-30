@@ -1,5 +1,5 @@
 # spec file for package pil-git-scripts
-#
+# Copyrigh  (c) 2020 Pickering Interfaces, Ltd.
 # Copyright (c) 2020 SUSE LINUX GmbH, Nuernberg, Germany.
 #
 # All modifications and additions to the file contributed by third parties
@@ -17,10 +17,8 @@ Summary:	PIL scripts handling basic git tasks
 # FIXME: Select a correct license from https://github.com/openSUSE/spec-cleaner#spdx-licenses
 License:        MIT
 # FIXME: use correct group, see "https://en.opensuse.org/openSUSE:Package_group_guidelines"
-Group:          Extra
-Source0:        scripts/git_remote_status.sh
-Source1:        scripts/graph_log.sh
-Source2:        scripts/push_branch.sh
+Group:		Development/Git
+Source:		%{name}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
 
@@ -29,21 +27,19 @@ Simple collection of basic scripts to handle common
 git tasks.
 
 %prep
-#%setup -q
+%setup -n %{name}
 
 %build
 
 %install
 # from https://fedoraproject.org/wiki/Packaging:RPM_Source_Dir
-install -m 755 -D %{SOURCE0} $RPM_BUILD_ROOT/usr/local/bin
-install -m 755 -D %{SOURCE1} $RPM_BUILD_ROOT/usr/local/bin
-install -m 755 -D %{SOURCE2} $RPM_BUILD_ROOT/usr/local/bin
+install -m 755 -D -t $RPM_BUILD_ROOT/usr/local/bin scripts/*.sh
 
 %files
 %defattr(-,root,root)
 /usr/local/bin
 
-#TODO: %doc ChangeLog README LICENSE
+%doc ChangeLog README.md LICENSE
 
 
 %changelog
