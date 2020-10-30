@@ -86,8 +86,8 @@ sudo apt-get install git
 # now install generated package
 sudo dpkg -i pil-git-scripts_0.11_all.deb
 # you can verify insallation using commands:
-dpkg -l pil-git-scripts_0.11_all.deb
-dpkg -L pil-git-scripts_0.11_all.deb
+dpkg -l pil-git-scripts
+dpkg -L pil-git-scripts
 ```
 
 ## Release tips
