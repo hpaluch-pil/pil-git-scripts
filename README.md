@@ -55,6 +55,7 @@ then do this:
 sudo curl -o /etc/yum.repos.d/bintray-hpaluch8192-pil-packages-rpms.repo \
      https://bintray.com/hpaluch8192/pil-packages-rpms/rpm
 sudo yum update
+sudo yum makecache
 sudo yum install pil-git-scripts
 ```
 

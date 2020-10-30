@@ -29,10 +29,11 @@ BINTRAY_LOGIN=$(fgrep 'machine api.bintray.com' $BINTRAY_CURL_FILE | awk '{print
 for i in build/rpm-$ID/rpmbuild/RPMS/noarch/pil-git-scripts-*.noarch.rpm
 do
 	name=$(basename "$i")
+	rel=$( rpm -qp --queryformat='%{RELEASE}\n' "$i")
 	set -x
 curl -T $i -fsS --netrc-file $BINTRAY_CURL_FILE \
 	https://api.bintray.com/content/$BINTRAY_LOGIN/$BINTRAY_REPO\
-/$BINTRAY_PKG/0/$name
+/$BINTRAY_PKG/$rel/$name
 	set +x
 	echo "Done. Remember to login to bintray, publish new version and un-publish old version of package"
 done

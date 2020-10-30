@@ -4,7 +4,7 @@ set -e
 set -o pipefail
 cd `dirname $0`
 source /etc/os-release
-rm -rf build/rpm-suse
+rm -rf build/rpm-$ID
 [ -n "$ID" ] || {
 	echo "Unable to extract ID from /etc/os-release" >&2
 	exit 1
