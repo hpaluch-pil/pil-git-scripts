@@ -1,6 +1,7 @@
 # PIL Git scripts
 
-Debian `.deb` package containing set of custom scripts for common Git tasks.
+Here is Debian `.deb` and/or CentOS/openSUSE `.rpm` package
+containing set of custom scripts for common Git tasks.
 
 DISCLAIMER: These scripts are provided "as is" without any warranty! Use them on
 your own risk!
@@ -13,7 +14,7 @@ Current scripts are:
 NOTE: All above commands are supposed to be invoked within git repository
 (directory or parent with valid `.git/` repo in it).
 
-# How to use this .deb package
+# How to use Debian .deb package
 
 Tested on Debian10.
 
@@ -99,13 +100,27 @@ TIP: Use `date -R` to get ChangeLog compliant date format.
 
 # How to build RPM packages
 
-## Building under openSUSE LEAP 15.2
+## Setup under openSUSE LEAP 15.2
 
-To setup build environment do this:
+Install these packages:
 
 ```bash
-# tested on openSUSE LEAP 15.2 x86_64
 sudo zypper in git-core rpm-build
+```
+
+## Setup under CentOS 7
+
+Install these packages:
+
+```bash
+sudo yum install -y git rpm-build
+```
+
+## Building RPM (continued)
+
+Clone this project using:
+
+```bash
 mkdir ~/projects
 cd ~/projects
 git clone https://github.com/hpaluch-pil/pil-git-scripts.git
@@ -114,19 +129,25 @@ cd pil-git-scripts
 
 Now build RPM using script:
 ```bash
-./build_rpm_suse.sh
+./build_rpm.sh
 ```
 
 It should create RPM file as:
 
 ```
-build/rpm-suse/rpmbuild/RPMS/noarch/pil-git-scripts-0.10-0.noarch.rpm
+build/rpm-$ID/rpmbuild/RPMS/noarch/pil-git-scripts-0.10-0.noarch.rpm
 ```
+
+Where `$ID` is defined under `/etc/os-release`, for example:
+
+* `opensuse-leap` for `openSUSE LEAP 15.2`
+* `centos` for `CentOS 7`
+
 
 Install this RPM using standard command like:
 
 ```bash
 sudo rpm -ivh \
-	build/rpm-suse/rpmbuild/RPMS/noarch/pil-git-scripts-0.10-0.noarch.rpm
+	build/rpm-$ID/rpmbuild/RPMS/noarch/pil-git-scripts-0.10-0.noarch.rpm
 ```
 
