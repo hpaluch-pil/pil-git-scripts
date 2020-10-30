@@ -16,10 +16,11 @@ do
 done
 
 # prepare SOURCES/tar.gz for RPM
-# FIXME: we expect that parent directory is "pil-git-scripts" !
-(cd .. && tar cvzf pil-git-scripts/build/rpm-$ID/rpmbuild/SOURCES/pil-git-scripts.tar.gz \
-	pil-git-scripts/README.md pil-git-scripts/ChangeLog \
-        pil-git-scripts/LICENSE pil-git-scripts/scripts )
+mkdir -p build/rpm-$ID/tree/pil-git-scripts
+cp README.md ChangeLog LICENSE build/rpm-$ID/tree/pil-git-scripts
+cp -r scripts build/rpm-$ID/tree/pil-git-scripts
+( cd build/rpm-$ID/tree && tar cvzf ../rpmbuild/SOURCES/pil-git-scripts.tar.gz \
+        pil-git-scripts/ )
 
 rpmbuild -bb \
 	-D'_topdir '`pwd`/build/rpm-$ID/rpmbuild \
