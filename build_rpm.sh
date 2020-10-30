@@ -17,7 +17,9 @@ done
 
 # prepare SOURCES/tar.gz for RPM
 mkdir -p build/rpm-$ID/tree/pil-git-scripts
-cp README.md ChangeLog LICENSE build/rpm-$ID/tree/pil-git-scripts
+cp README.Debian build/rpm-$ID/tree/pil-git-scripts/README.txt
+sed -n '/%changelog/,$p' pil-git-scripts.spec  | sed -n '2,$p' > build/rpm-$ID/tree/pil-git-scripts/ChangeLog
+cp LICENSE build/rpm-$ID/tree/pil-git-scripts
 cp -r scripts build/rpm-$ID/tree/pil-git-scripts
 ( cd build/rpm-$ID/tree && tar cvzf ../rpmbuild/SOURCES/pil-git-scripts.tar.gz \
         pil-git-scripts/ )

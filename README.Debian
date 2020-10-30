@@ -1,4 +1,4 @@
-Debian package containing set of custom scripts for common Git tasks.
+Package containing set of custom scripts for common Git tasks.
 
 Current scripts are (all in /usr/local/bin):
 - git_remote_status.sh - will query remote repository for status (for example if there are new commits to be pulled)

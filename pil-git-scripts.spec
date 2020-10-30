@@ -12,7 +12,7 @@
 # published by the Open Source Initiative.
 Name:           pil-git-scripts
 Version:        0.10
-Release:        0
+Release:        1
 Summary:	PIL scripts handling basic git tasks
 # FIXME: Select a correct license from https://github.com/openSUSE/spec-cleaner#spdx-licenses
 License:        MIT
@@ -40,11 +40,17 @@ install -m 755 -D -t $RPM_BUILD_ROOT/usr/local/bin scripts/*.sh
 %defattr(-,root,root)
 /usr/local/bin
 
-%doc ChangeLog README.md LICENSE
+%doc ChangeLog README.txt LICENSE
 
 
+# use  date  '+%a %b %d %Y' to get date in format:
+#  Fri Oct 30 2020
 %changelog
-# from https://www.suse.com/c/building-simple-rpms-arbitary-files/
-* Sun Aug 01 2010  Your name here
+* Fri Oct 30 2020 Henryk Paluch
+- use real ChangeLog
+- use README.Debian as README.txt
+- 0.10 r1 release
+
+* Thu Oct 29 2020 Henryk Paluch
 - 0.10 r0 First release
 
