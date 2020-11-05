@@ -91,7 +91,7 @@ On success there should be generated `.deb` package *in this directory*
 To see contents of created `.deb` package use `dpkg -c`, for example:
 
 ```bash
-dpkg -c pil-git-scripts_0.11_all.deb
+dpkg -c pil-git-scripts_0.12_all.deb
 ```
 
 ## System installation
@@ -107,7 +107,7 @@ To install directly this package without repository you need to:
 # satisfy installation dependecy - required only with direct use of dpkg
 sudo apt-get install git
 # now install generated package
-sudo dpkg -i pil-git-scripts_0.11_all.deb
+sudo dpkg -i pil-git-scripts_0.12_all.deb
 # you can verify insallation using commands:
 dpkg -l pil-git-scripts
 dpkg -L pil-git-scripts
@@ -158,7 +158,7 @@ Now build RPM using script:
 It should create RPM file as:
 
 ```
-build/rpm-$ID/rpmbuild/RPMS/noarch/pil-git-scripts-0.10-0.noarch.rpm
+build/rpm-$ID/rpmbuild/RPMS/noarch/pil-git-scripts-0.12-0.noarch.rpm
 ```
 
 Where `$ID` is defined under `/etc/os-release`, for example:
@@ -172,6 +172,6 @@ Install this RPM using standard command like:
 ```bash
 source /etc/os-release # get $ID
 sudo rpm -ivh \
-	build/rpm-$ID/rpmbuild/RPMS/noarch/pil-git-scripts-0.10-0.noarch.rpm
+	build/rpm-$ID/rpmbuild/RPMS/noarch/pil-git-scripts-0.12-0.noarch.rpm
 ```
 
