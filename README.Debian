@@ -1,6 +1,10 @@
 Package containing set of custom scripts for common Git tasks.
 
 Current scripts are (all in /usr/local/bin):
+- check_branch_tag_duplicates.sh - check for duplicate branch=tag names
+  This causes serious havoc to GitLab - please read for details:
+  - https://gitlab.com/gitlab-org/gitlab/-/issues/238438
+  - https://gitlab.com/gitlab-org/gitlab/-/issues/219583
 - git_remote_status.sh - will query remote repository for status (for example if there are new commits to be pulled)
 - graph_log.sh - will show nice decorated graph (text mode) of commits
 - push_branch.sh - will push current branch to origin named `origin`

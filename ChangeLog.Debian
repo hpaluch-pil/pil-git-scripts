@@ -1,3 +1,10 @@
+pil-git-scripts (0.12) unstable; urgency=low
+
+  * check_branch_tag_duplicates.sh - that checks for duplicate
+    branch=tag names which cause havoc on GitLab
+
+ -- Henryk Paluch <henryk.paluch@pickering.cz>  Thu, 05 Nov 2020 08:05:44 +0100
+
 pil-git-scripts (0.11) unstable; urgency=low
 
   * Bumped-up version to avoid conflict on bintray repository

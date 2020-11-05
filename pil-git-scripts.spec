@@ -11,8 +11,8 @@
 # license that conforms to the Open Source Definition (Version 1.9)
 # published by the Open Source Initiative.
 Name:           pil-git-scripts
-Version:        0.10
-Release:        1
+Version:        0.12
+Release:        0
 Summary:	PIL scripts handling basic git tasks
 # FIXME: Select a correct license from https://github.com/openSUSE/spec-cleaner#spdx-licenses
 License:        MIT
@@ -46,6 +46,10 @@ install -m 755 -D -t $RPM_BUILD_ROOT/usr/local/bin scripts/*.sh
 # use  date  '+%a %b %d %Y' to get date in format:
 #  Fri Oct 30 2020
 %changelog
+* Thu Nov 05 2020 Henryk Paluch
+- added script check_branch_tag_duplicates.sh
+- 0.12 r0 release
+
 * Fri Oct 30 2020 Henryk Paluch
 - use real ChangeLog
 - use README.Debian as README.txt

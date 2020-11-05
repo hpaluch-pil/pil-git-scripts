@@ -7,7 +7,7 @@ rm -fv pil-git-scripts*.deb
 
 err=`mktemp`
 trap "rm -f $err" RETURN
-parsechangelog ChangeLog 2> $err
+parsechangelog ChangeLog.Debian 2> $err || true
 if [ -s "$err" ]; then
 	echo "There were errors/warnings parsing ChangeLog:" >&2
 	cat "$err" >&2
