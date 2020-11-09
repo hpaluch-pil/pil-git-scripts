@@ -28,7 +28,7 @@ cp -r scripts build/rpm-$ID/tree/pil-git-scripts
 echo "Source ready in build/rpm-$ID/tree/"
 cat <<EOF
 You can now create src.rpm using command like:
-  mock -r epel-7-x86_64 --buildsrpm --spec pil-git-scripts.spec --sources build/rpm-debian/rpmbuild/SOURCES
+  mock -r epel-7-x86_64 --buildsrpm --spec pil-git-scripts.spec --sources build/rpm-$ID/rpmbuild/SOURCES
 And use it to build binary RPM:
   mock -r epel-7-x86_64 --rebuild /var/lib/mock/epel-7-x86_64/result/pil-git-scripts-0.12-0.src.rpm 
 EOF
