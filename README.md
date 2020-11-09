@@ -123,7 +123,40 @@ TIP: Use `date -R` to get ChangeLog compliant date format.
 
 # How to build RPM packages
 
-## Setup under openSUSE LEAP 15.2
+## Building RPM using mock
+
+It is possible to build RPMs in chroot using `mock(1)` command. It is
+supported, for example, on CentOS and even on Debian10.
+
+
+For Debian install:
+
+```bash
+sudo apt-get install mock
+```
+
+For CentOS try:
+
+```bash
+sudo yum install mock
+```
+
+Add yourself to `mock` group:
+```bash
+sudo /usr/sbin/usermod -G mock -a $USER
+```
+Relogin to ensure that you are really in group `mock`.
+
+Now you need to initialize chroot (only for the 1st time):
+```bash
+mock -r epel-7-x86_64 --init
+```
+Then run this script and follow instructions:
+```bash
+./prepare_for_mock.sh
+```
+
+## Native build under openSUSE LEAP 15.2
 
 Install these packages:
 
@@ -131,7 +164,7 @@ Install these packages:
 sudo zypper in git-core rpm-build
 ```
 
-## Setup under CentOS 7
+## Native build under CentOS 7
 
 Install these packages:
 
@@ -139,7 +172,7 @@ Install these packages:
 sudo yum install -y git rpm-build
 ```
 
-## Building RPM (continued)
+## Native Building RPM (continued)
 
 Clone this project using:
 
