@@ -22,6 +22,7 @@ Tested on Debian10.
 First import Public Bintray key:
 
 ```bash
+sudo apt-get install -y gnupg
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80  --recv-keys 379CE192D401AB61
 ```
 
