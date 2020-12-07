@@ -7,6 +7,7 @@ Current scripts are (all in /usr/local/bin):
   - https://gitlab.com/gitlab-org/gitlab/-/issues/219583
 - git_remote_status.sh - will query remote repository for status (for example if there are new commits to be pulled)
 - graph_log.sh - will show nice decorated graph (text mode) of commits
+- graph_log_simplified.sh - will show nice decorated graph with important commits only
 - push_branch.sh - will push current branch to origin named `origin`
 
 NOTE: All above commands are supposed to be invoked within git repository
